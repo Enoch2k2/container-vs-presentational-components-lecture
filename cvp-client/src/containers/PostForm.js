@@ -32,12 +32,9 @@ export class PostForm extends Component {
       body: JSON.stringify(strongParams)
     })
       .then(resp => resp.json())
-      .then(post => this.props.addPost(post))
-
-    this.setState({
-      title: "",
-      content: ""
-    })
+      .then(post => {
+        this.props.history.push('/posts')
+      })
   }
 
   render() {
